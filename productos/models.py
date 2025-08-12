@@ -8,11 +8,11 @@ class Productos(models.Model):
 
     nombre = models.CharField(max_length=255, verbose_name="Nombre")
     descripcion = models.TextField(
-        verbose_name="Descripción", blank=True, null=True  # Campo opcional
+        verbose_name="Descripción", blank=True, null=True 
     )
     precio = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Precio")
     disponible = models.BooleanField(
-        default=True, verbose_name="Disponible"  # Valor por defecto es True
+        default=True, verbose_name="Disponible" 
     )
 
     def __str__(self):
