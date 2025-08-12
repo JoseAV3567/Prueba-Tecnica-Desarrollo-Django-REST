@@ -58,6 +58,7 @@ ALLOWED_HOSTS = ["localhost"]
 # config/settings.py
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
