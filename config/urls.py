@@ -34,13 +34,8 @@ urlpatterns = [
         name="schema-swagger-ui",
     ),
     path("admin/", admin.site.urls),
-    path("v1/", include("productos.urls")),  # Asegúrate de incluir las URLs de tu app
-    # path(
-    #     "swagger/",
-    #     schema_view.with_ui("swagger", cache_timeout=0),
-    #     name="schema-swagger-ui",
-    # ),
-    # path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
+    path("v1/", include("productos.urls")),
+  
 ]
 
 if settings.DEBUG:
