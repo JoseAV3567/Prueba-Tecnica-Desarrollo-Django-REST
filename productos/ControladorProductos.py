@@ -1,16 +1,12 @@
-# Archivo: productos/ControladorProductos.py
-
 from rest_framework.viewsets import ModelViewSet  # <- CAMBIAR AQUÍ
 from rest_framework.response import Response
 from rest_framework import status
-
-# ... otras importaciones
 
 from .models import Productos
 from .serializers import ProductosSerializers
 
 
-# CAMBIAR a ModelViewSet
+
 class ProductosApiView(ModelViewSet):
     serializer_class = ProductosSerializers
     queryset = Productos.objects.all().order_by("-pk")
@@ -19,7 +15,7 @@ class ProductosApiView(ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            # Es mejor devolver el objeto creado en la respuesta
+       
             headers = self.get_success_headers(serializer.data)
             return Response(
                 serializer.data, status=status.HTTP_201_CREATED, headers=headers
